@@ -1,6 +1,6 @@
 <?php
 include_once __DIR__ . '/Categories.php';
-class Dogs
+class Dogs extends Categories
 {
     public function __construct($foods, $kenneld, $toys, $medicines)
     {

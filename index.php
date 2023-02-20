@@ -6,9 +6,10 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
  icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia ecc). -->
 
 <?php
-include_once __DIR__ . './models/Categories.php';
-include_once __DIR__ . './models/Cats.php';
-include_once __DIR__ . './models/Dogs.php';
+require_once __DIR__ . '/models/Categories.php';
+require_once __DIR__ . '/models/Cats.php';
+require_once __DIR__ . '/models/Dogs.php';
+
 
 ?>
 
