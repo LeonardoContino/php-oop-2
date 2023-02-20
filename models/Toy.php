@@ -1,11 +1,12 @@
 <?php
-include_once __DIR__ . '/Products.php';
+include_once __DIR__ . '/Product.php';
 class Toy extends Product
 {
-
- public function __construct($_name, $_categories, $_price)
+    public $type;
+ public function __construct($_name, $_categories, $_price, $type)
  {
     parent::__construct($_name, $_categories, $_price);
+    $this->type = $type;
     
  }
 
