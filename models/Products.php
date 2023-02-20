@@ -1,19 +1,18 @@
 <?php
 
-class Products
+class Product
 {
  public $name;
  public $categories;
  public $price;
- public $product_datails;
  
- public function __construct($_name, $_categories, $_price, $_product_details)
+ 
+ public function __construct($_name, $_categories, $_price)
  {
     $this->name = $_name;
     $this->categories = $_categories;
     $this->price = $_price;
-    $this->product_details = $_product_details;
-
+    
  }
 
 }
