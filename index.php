@@ -8,6 +8,7 @@ Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, 
 <?php
 
 require_once __DIR__ . '/models/Products.php';
+require_once __DIR__ . '/models/Food.php';
 
 $cats;
 $dogs;
