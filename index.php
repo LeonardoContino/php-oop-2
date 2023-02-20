@@ -21,12 +21,12 @@ $dogs = new Categories('dogs');
 
 // prodotti
 
-$food_cat = new Product('crocchette', $cats, 2, 'cibo');
-$food_dog = new Product('crocchette', $dogs, 2, 'cibo');
-$toy_dog = new Product('osso', $dogs, 2, 'gioco');
-$toy_cat = new Product('pallina', $cat, 2, 'gioco');
-$kennel_dog = new Product('casetta di legno', $dogs, 2, '3m x 3m');
-$kennel_cat = new Product('casetta di legno', $cat, 2, '3m x 3m');
+$food_cat = new Food('crocchette', $cats, 2, 'cibo');
+$food_dog = new Food('crocchette', $dogs, 2.50, 'cibo');
+$toy_dog = new Toy('osso', $dogs, 6, 'gioco');
+$toy_cat = new Toy('pallina', $cats, 2, 'gioco');
+$kennel_dog = new Kennel('casetta di legno', $dogs, 50, '3m x 3m');
+$kennel_cat = new Kennel('casetta per gatti ', $cats, 30, '3m x 3m');
 
 $products =[$food_cat, $food_dog, $toy_cat, $toy_dog, $kennel_cat, $kennel_dog];
 
@@ -46,6 +46,38 @@ $products =[$food_cat, $food_dog, $toy_cat, $toy_dog, $kennel_cat, $kennel_dog];
     <title>Document</title>
 </head>
 <body>
-    
+    <section class="container text-center m-5">
+        <h1>E-COMMERCE FOR ANIMALS</h1>
+    </section>
+    <section class="container">
+        <div class="row">
+           <?php foreach($products as $product) :?> 
+            <div class="col-4 p-3">
+                <div class="card p-3">
+                    <div class="card-body">
+                    <h5 class="card-title">Nome Prodotto: <?= $product->name ?></h5>
+                    <p class="card-text">Categoria: <?= $product->categories->name ?></p>
+                    <p class="card-text">Prezzo: <?= $product->price ?>€</p>
+                    <?php if ($product instanceof Food) : ?>
+                    <p class="card-text"> Tipo prodotto: <?= $product->datails_food ?></p>
+                    <?php endif; ?>
+                    <?php if ($product instanceof Toy) : ?>
+                    <p class="card-text"> Tipo prodotto: <?= $product->type ?></p>
+                    <?php endif; ?>
+                    <?php if ($product instanceof Kennel) : ?>
+                    <p class="card-text"> Grandezza: <?= $product->size ?></p>
+                    <?php endif; ?>
+                    
+
+
+                    </div>
+
+                </div>
+            </div>
+           <?php endforeach; ?> 
+        </div>
+        
+
+    </section>
 </body>
 </html>
